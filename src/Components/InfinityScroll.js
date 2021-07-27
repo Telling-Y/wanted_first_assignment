@@ -55,10 +55,10 @@ function InfinityScroll() {
                 <ItemsTitle>Email</ItemsTitle>
                 <span>{data.email}</span>
               </CommentItems>
-              <CommentItems>
+              <CommentArea>
                 <CommentTitle>Comment</CommentTitle>
                 <span>{data.body}</span>
-              </CommentItems>
+              </CommentArea>
             </ItemsWrapper>
           </CommentBox>
         );
@@ -69,8 +69,7 @@ function InfinityScroll() {
 export default InfinityScroll;
 
 const CommentContainer = styled.div`
-  position: absolute;
-  top: 33px;
+  width: 500px;
   font-size: 18px;
 `;
 
@@ -82,20 +81,28 @@ const CommentBox = styled.div`
 `;
 
 const CommentItems = styled.div`
+  display: flex;
+  margin-bottom: 12px;
+`;
+
+const CommentArea = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-bottom: 12px;
 `;
 
 const ItemsWrapper = styled.div`
+  width: 460px;
   padding-left: 20px;
   padding-top: 20px;
 `;
 
 const ItemsTitle = styled.h2`
-  font-weight: 700;
+  font-weight: 600;
   margin-right: 12px;
 `;
 
 const CommentTitle = styled.p`
   display: block;
-  font-weight: 700;
+  font-weight: 600;
 `;
