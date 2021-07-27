@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import InfinityScroll from "../Components/InfinityScroll";
+import styled from "styled-components";
 
 function App() {
-  const [commentData, setCommentData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
-      .then((res) => res.json())
-      .then((data) => setCommentData(data));
-  }, []);
-
   return (
-    <>
-      <InfinityScroll commentData={commentData} />
-    </>
+    <MainContainer>
+      <InfinityScroll />
+    </MainContainer>
   );
 }
-
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+`;
 export default App;
